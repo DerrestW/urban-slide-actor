@@ -1,0 +1,24 @@
+{
+  "name": "urban-slide-city-scraper",
+  "version": "1.0.0",
+  "description": "Scrapes city government websites for event directors, parks directors, and procurement contacts",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "build": "tsc",
+    "dev": "ts-node src/main.ts"
+  },
+  "dependencies": {
+    "apify": "^3.0.0",
+    "crawlee": "^3.0.0",
+    "playwright": "^1.40.0",
+    "pdf-parse": "^1.1.1",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/pdf-parse": "^1.1.4",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}

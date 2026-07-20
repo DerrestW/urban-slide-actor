@@ -1,0 +1,22 @@
+{
+  "actorSpecification": 1,
+  "name": "urban-slide-city-contact-scraper",
+  "title": "Urban Slide City Official Contact Scraper",
+  "description": "Finds special events directors, parks directors, procurement managers, and tourism directors at city governments for Urban Slide event outreach.",
+  "version": "1.0",
+  "input": "$INPUT_SCHEMA",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "Contacts Found",
+          "transformation": {
+            "fields": ["city", "state", "fullName", "exactJobTitle", "contactCategory", "email", "directPhone", "confidenceLevel", "sourceUrl"]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Urban Slide City Contact Scraper",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "cities": {
+      "title": "Target Cities",
+      "type": "array",
+      "description": "List of cities to scrape",
+      "editor": "json",
+      "default": [
+        { "city": "Gadsden", "state": "Alabama", "stateCode": "AL" },
+        { "city": "Hampton", "state": "Virginia", "stateCode": "VA" }
+      ]
+    },
+    "minimumContactsPerCity": {
+      "title": "Minimum Contacts Per City",
+      "type": "integer",
+      "default": 3
+    },
+    "maximumContactsPerCity": {
+      "title": "Maximum Contacts Per City",
+      "type": "integer",
+      "default": 8
+    },
+    "crawlDepth": {
+      "title": "Crawl Depth",
+      "type": "integer",
+      "default": 3
+    },
+    "maximumPagesPerDomain": {
+      "title": "Max Pages Per Domain",
+      "type": "integer",
+      "default": 75
+    },
+    "includePdfs": {
+      "title": "Include PDFs",
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": ["cities"]
+}
