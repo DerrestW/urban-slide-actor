@@ -195,7 +195,7 @@ Actor.main(async () => {
       },
 
       failedRequestHandler({ request, error }) {
-        log.warning(`Failed: ${request.url} - ${error.message}`);
+        log.warning(`Failed: ${request.url} - ${String(error)}`);
       },
     });
 
