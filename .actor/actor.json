@@ -13,32 +13,38 @@
       "cities": {
         "title": "Cities",
         "type": "array",
+        "description": "List of cities to scrape for contacts",
         "editor": "json",
         "default": []
       },
       "minimumContactsPerCity": {
         "title": "Min Contacts",
         "type": "integer",
+        "description": "Minimum contacts to find per city",
         "default": 3
       },
       "maximumContactsPerCity": {
         "title": "Max Contacts",
         "type": "integer",
+        "description": "Maximum contacts to return per city",
         "default": 8
       },
       "crawlDepth": {
         "title": "Crawl Depth",
         "type": "integer",
+        "description": "How deep to crawl each site",
         "default": 3
       },
       "maximumPagesPerDomain": {
         "title": "Max Pages",
         "type": "integer",
+        "description": "Maximum pages to crawl per domain",
         "default": 75
       },
       "includePdfs": {
         "title": "Include PDFs",
         "type": "boolean",
+        "description": "Whether to extract contacts from PDF files",
         "default": true
       }
     },
