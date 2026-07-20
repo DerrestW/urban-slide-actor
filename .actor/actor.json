@@ -2,21 +2,48 @@
   "actorSpecification": 1,
   "name": "urban-slide-city-contact-scraper",
   "title": "Urban Slide City Official Contact Scraper",
-  "description": "Finds special events directors, parks directors, procurement managers, and tourism directors at city governments for Urban Slide event outreach.",
+  "description": "Finds city officials for Urban Slide outreach.",
   "version": "1.0",
-  "input": "$INPUT_SCHEMA",
   "dockerfile": "./Dockerfile",
-  "storages": {
-    "dataset": {
-      "actorSpecification": 1,
-      "views": {
-        "overview": {
-          "title": "Contacts Found",
-          "transformation": {
-            "fields": ["city", "state", "fullName", "exactJobTitle", "contactCategory", "email", "directPhone", "confidenceLevel", "sourceUrl"]
-          }
-        }
+  "input": {
+    "title": "Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "cities": {
+        "title": "Cities",
+        "type": "array",
+        "editor": "json",
+        "default": []
+      },
+      "minimumContactsPerCity": {
+        "title": "Min Contacts",
+        "type": "integer",
+        "default": 3
+      },
+      "maximumContactsPerCity": {
+        "title": "Max Contacts",
+        "type": "integer",
+        "default": 8
+      },
+      "crawlDepth": {
+        "title": "Crawl Depth",
+        "type": "integer",
+        "default": 3
+      },
+      "maximumPagesPerDomain": {
+        "title": "Max Pages",
+        "type": "integer",
+        "default": 75
+      },
+      "includePdfs": {
+        "title": "Include PDFs",
+        "type": "boolean",
+        "default": true
       }
-    }
+    },
+    "required": [
+      "cities"
+    ]
   }
 }
