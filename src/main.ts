@@ -125,9 +125,7 @@ Actor.main(async () => {
     log.info(`Found ${discoveredUrls.size} URLs to crawl for ${city.city}`);
 
     // Step 3: Crawl discovered URLs with Playwright
-    const queueName = `${city.city}-${city.stateCode}-${Date.now()}`.toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/-+/g, "-").replace(/^-+|-+$/g, "");
-    log.info(`Opening request queue: ${queueName}`);
-    const requestQueue = await RequestQueue.open(queueName);
+    const requestQueue = await RequestQueue.open(`${cityKey}-${Date.now()}`);
 
     for (const url of discoveredUrls) {
       await requestQueue.addRequest({
