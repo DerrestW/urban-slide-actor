@@ -1,4 +1,4 @@
-FROM apify/actor-node-playwright-chrome:18
+FROM apify/actor-node-playwright-chrome:20
 
 COPY package*.json ./
 RUN npm --quiet set progress=false && npm install && echo "All npm packages installed"
